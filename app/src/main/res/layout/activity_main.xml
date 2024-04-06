@@ -6,13 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <Button
+        android:id="@+id/btn_listener"
+        style="@style/Widget.Material3.Button.ElevatedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#59DCAB"
+        android:padding="5dp"
+        android:text="Listen"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/list_deviecs"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#59DCAB"
+        android:layout_marginStart="30dp"
+        android:padding="5dp"
+        android:text="List Device"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_listener"
+        app:layout_constraintStart_toEndOf="@+id/btn_listener"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/call"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#59DCAB"
+        android:textColor="@android:color/white"
+        android:text="Call"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/list_deviecs"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Connected "
+        android:textColor="#ED2020"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_listener"
+        app:layout_constraintEnd_toStartOf="@+id/list_deviecs"
+        app:layout_constraintStart_toEndOf="@+id/btn_listener" />
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/teal_700"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/list_deviecs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        app:layout_constraintTop_toBottomOf="@+id/listview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent">
+       <com.google.android.material.textfield.TextInputLayout
+           android:padding="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1">
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/enter_msg"
+               android:layout_width="match_parent"
+               android:hint="Enter Message"
+               android:layout_height="wrap_content"/>
+       </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/btnSend"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:backgroundTint="@color/purple_500"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Send"
+            />
+   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
